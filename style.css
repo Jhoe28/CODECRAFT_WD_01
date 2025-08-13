@@ -1,0 +1,126 @@
+*{
+    padding: 0;margin: 0;box-sizing: border-box;
+}
+:root{
+    --inner-bg: #888787;
+    --reset-bg: #950000;
+    --outer-bg: #140c36;
+    --content-bg: #dcd9e8;
+    --text-1: #278720;
+    --text-2: #000000;
+    --text-3: #fff;
+}
+body{
+    background-color: black;
+}
+.row{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+}
+.row .col1,
+.row .col2{
+    flex: 0 0 50%;
+    width: 100%;
+    text-align: center;
+}
+.row .col1{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: min(8rem, 5%);
+}
+.row .col1 .start button{
+    padding: 15px 30px;
+    background-color: var(--text-1);
+    color: var(--text-3);
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 3px solid var(--text-3);
+    border-radius: .5rem;
+}
+.row .col1 .start button.stop{
+    background-color: var(--content-bg);
+    color: var(--text-2);
+    border: 3px solid var(--text-1);
+}
+.row .col1 h1{
+    color: var(--text-1);
+    font-size: clamp(1rem, calc(5vw + 1rem), 5rem);
+    font-weight: 600;
+}
+.row .col2 .outer{
+    max-width: 500px;
+    min-width:200px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: var(--outer-bg);
+    border: 10px solid var(--text-2);
+    border-radius: 50%;
+    position: relative;
+}
+.row .col2 .outer .inner{
+    position: absolute;
+    width: 85%;
+    aspect-ratio: 1/1;
+    background-color: var(--inner-bg);
+    border-radius: 50%;
+    border: 10px solid var(--text-2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.row .col2 .outer .inner .content{
+    background-color: var(--content-bg);
+    padding: min(5rem, 5%) min(10rem, 8%);
+    border: 5px solid var(--text-2);
+    border-radius: 1rem;
+}
+.row .col2 .outer .inner .content h2{
+    font-size: clamp(1rem, calc(5vw + 1rem), 3rem);
+    letter-spacing: 2px;
+    line-height: 3.5rem;
+}
+.row .col2 .outer .inner .reset button{
+    padding: 10px 25px;
+    background-color: var(--reset-bg);
+    cursor: pointer;
+    font-size: clamp(1rem, calc(5vw + 1rem), 1.2rem);
+}
+
+@media (max-width: 1100px) {
+    .row .col2 .outer{
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 991px) {
+    .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90dvh;
+    }
+    .row .col1,
+    .row .col2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row .col1{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
